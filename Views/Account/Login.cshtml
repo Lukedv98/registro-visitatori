@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Accesso - Aurea Services";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-7 col-lg-5">
+            <div class="card shadow-sm border-0 mt-5">
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <img src="~/img/aurea-logo.svg" alt="Aurea Services" style="height: 40px; width:auto;" />
+                        <div>
+                            <h1 class="h4 mb-0">Accesso</h1>
+                            <div class="text-muted small">Aurea Services</div>
+                        </div>
+                    </div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center mb-3" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <div>@ViewBag.Error</div>
+                        </div>
+                    }
+
+                    <form asp-action="Login" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input name="username" class="form-control" autocomplete="username"
+                                value="@ViewBag.Username" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input name="password" type="password" class="form-control"
+                                autocomplete="current-password" />
+                        </div>
+
+                        <button class="btn btn-primary w-100" type="submit">
+                            Accedi
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+            <p class="text-center text-muted small mt-3 mb-0">
+                Accesso riservato al personale autorizzato.
+            </p>
+        </div>
+    </div>
+</div>
