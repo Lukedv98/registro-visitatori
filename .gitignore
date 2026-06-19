@@ -1,8 +1,32 @@
+# Build
 bin/
 obj/
+
+# IDE / editor
+.vs/
+.idea/
+*.user
+*.suo
+
+# macOS
+.DS_Store
+
+# Database locali
 *.db
 *.db-shm
 *.db-wal
-.vs/
-*.user
-*.dll
+
+# File compressi
+*.zip
+
+# File temporanei
+*.tmp
+*.log
+
+# Documenti non necessari al codice
+*.pptx
+*.pdf
+*.numbers
+
+# File di sistema
+__MACOSX/
